@@ -74,8 +74,9 @@ class Pexlechris_Adminer extends Adminer\Adminer
 
 	public function print_dark_mode_switcher()
 	{
-		echo "<big style='position: fixed; bottom: .5em; right: .5em; cursor: pointer;'>☀</big>"
-			. Adminer\script("qsl('big').onclick = adminerDarkSwitch;") . "\n";
+		echo "<big style='position: fixed; bottom: .5em; right: .5em; cursor: pointer;'>☀</big>";
+		echo Adminer\script("qsl('big').onclick = adminerDarkSwitch;");
+        echo "\n";
 	}
 
 	/**
