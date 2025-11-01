@@ -156,8 +156,9 @@ $dropdown_items = apply_filters('pexlechris_adminer_adminbar_dropdown_items', $d
 
 == Changelog ==
 = 4.1.4 =
-* Fixed issue where Adminer URL would break when `home_url()` contained query parameters (e.g., WPML language parameter: https://example.com?lang=en)
-
+* [New]: Added quick access links at the top-left corner of the Adminer UI (WP Admin, Home).
+* [New]: Filter `pexlechris_adminer_sticky_links`
+* [Bug Fix]: Fixed issue where Adminer URL would break when `home_url()` contained query parameters (e.g., WPML language parameter: https://example.com?lang=en)
 
 = 4.1.3 =
 * Tested up to: 6.8.2
