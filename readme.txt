@@ -158,7 +158,7 @@ $dropdown_items = apply_filters('pexlechris_adminer_adminbar_dropdown_items', $d
 = 4.2.0 =
 * [New]: Update Adminer version to 5.4.1 [See Adminer 5.4.1 Release Notes](https://github.com/vrana/adminer/releases/tag/v5.4.1)
 * [New]: Added quick access links at the top-left corner of the Adminer UI (WP Admin, Home).
-* [New]: Filter `pexlechris_adminer_sticky_links`
+* [New]: Filter `pexlechris_adminer_sticky_links` introduced in order to filter the above quick access links.
 * [Bug Fix]: Fixed issue where Adminer URL would break when `home_url()` contained query parameters (e.g., WPML language parameter: https://example.com?lang=en)
 
 = 4.1.3 =
