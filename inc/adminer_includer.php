@@ -90,7 +90,8 @@ if( function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc() && !functi
 			'value' => $value,
 			0       => $key,
 			'key'   => $key
-		];	}
+		];
+	}
 }
 
 
