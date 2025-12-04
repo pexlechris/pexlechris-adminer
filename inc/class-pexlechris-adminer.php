@@ -305,13 +305,27 @@ class Pexlechris_Adminer extends Adminer\Adminer
             #dbs{
                 display: none;
             }
-            .footer > div > fieldset > div > p{
-                width: 150px;
+            .footer > div > fieldset:nth-child(2) > legend{
                 color: transparent;
-                display: inline-block;
-                margin-top: -15px;
+                width: 90px;
+                height: 17px;
+                position: relative;
             }
-            .footer > div > fieldset > div > p > *:not([name="copy"]){
+            .footer > div > fieldset:nth-child(2) > legend > span{
+                color: var(--fg);
+                position: absolute;
+                top: 0;
+                left: 70px;
+                padding-right: 4px;
+                background: var(--bg);
+            }
+            .footer > div > fieldset:nth-child(2) > legend > span::before{
+                content: "Selected ";
+                position: absolute;
+                left: -66px;
+            }
+            .footer > div > fieldset:nth-child(2) > div > select[name="target"],
+            .footer > div > fieldset:nth-child(2) > div > input[name="move"]{
                 display: none;
             }
         </style>
