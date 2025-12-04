@@ -215,12 +215,26 @@ function register_pexlechris_adminer_as_tool(){
 //IN TOOLS
 if( !function_exists('pexlechris_adminer_tools_page_content') ){
 	function pexlechris_adminer_tools_page_content(){
+        global $wpdb;
 		?>
 		<br>
 		<a href="<?php echo esc_url( get_pexlechris_adminer_url() ); ?>" class="button-primary pexlechris-adminer-tools-page-button" target="_blank">
-			<?php esc_html_e('Open Adminer in a new tab', 'pexlechris-adminer');?>
+			<?php esc_html_e('Open Adminer in a new tab', 'pexlechris-adminer'); ?>
         </a>
 		<?php
+        foreach(pexlechris_adminer_admin_bar_dropdown_items() as $table):
+            $name  = $table['name'];
+            $label = $table['label'];
+            $args  = $table['args'] ?? [];
+
+            $table_name = $wpdb->$name ?? $wpdb->prefix . $name;
+            ?>
+            <br>
+            <br>
+            <a href="<?php echo esc_url( get_pexlechris_adminer_url($table_name, $args) ); ?>" class="button pexlechris-adminer-tools-page-button" target="_blank">
+                <?php echo $label; ?>
+            </a>
+        <?php endforeach;
 	}
 }
 

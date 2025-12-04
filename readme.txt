@@ -159,6 +159,7 @@ $dropdown_items = apply_filters('pexlechris_adminer_adminbar_dropdown_items', $d
 * Tested up to: 6.9
 * [Enhancement]: Support added for plain permalinks.
 * [Enhancement]: Added polyfill for the deprecated each() function for environments where get_magic_quotes_gpc() exists and returns true.
+* [Enhancement]: The WP Adminer dropdown links have been added also in WP Adminer Tolls Page as buttons.
 
 = 4.2.0 =
 * [New]: Update Adminer version to 5.4.1 [See Adminer 5.4.1 Release Notes](https://github.com/vrana/adminer/releases/tag/v5.4.1)
