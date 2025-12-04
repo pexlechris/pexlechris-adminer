@@ -157,6 +157,7 @@ $dropdown_items = apply_filters('pexlechris_adminer_adminbar_dropdown_items', $d
 == Changelog ==
 = 4.3.0 =
 * Tested up to: 6.9
+* [Enhancement]: Support added for plain permalinks.
 * [Enhancement]: Added polyfill for the deprecated each() function for environments where get_magic_quotes_gpc() exists and returns true.
 
 = 4.2.0 =

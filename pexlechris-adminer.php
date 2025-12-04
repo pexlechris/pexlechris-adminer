@@ -286,7 +286,11 @@ function get_pexlechris_adminer_url( $table = null, $args = [] )
         $str .= '&' . $get_key . '=' . $get_value;
     }
 
-    $table_url = strtok( home_url(), '?' ) . '/' . PEXLECHRIS_ADMINER_SLUG . '?username=' . $str;
+    if( get_option('permalink_structure') ) {
+        $table_url = strtok(home_url(), '?') . '/' . PEXLECHRIS_ADMINER_SLUG . '?username=' . $str;
+    }else{
+        $table_url = strtok(admin_url(), '?') . '?username=' . $str;
+    }
 
 	/**
      * Filter to alter generated adminer URL

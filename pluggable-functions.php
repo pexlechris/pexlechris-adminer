@@ -15,6 +15,23 @@ if( !function_exists('pexlechris_is_current_url_the_wp_adminer_url') ){
 	function pexlechris_is_current_url_the_wp_adminer_url(){
 		$REQUEST_URI = parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
 		$REQUEST_URI = rtrim($REQUEST_URI, '/');
+
+		/**
+		 * In order to support plain permalinks.
+		 *
+		 * @since 4.3.0
+		 */
+		if( !get_option('permalink_structure', null) ){
+			$username = $_GET['username'] ?? null;
+			$server = $_GET['server'] ?? null;
+			if( pexlechris_adminer_ends_with($REQUEST_URI, 'wp-admin') && in_array('', [$username, $server], true) ){
+				return true;
+			}else{
+				return false;
+			}
+		}
+
+
 		if( pexlechris_adminer_ends_with($REQUEST_URI, PEXLECHRIS_ADMINER_SLUG) ){
 			return true;
 		}else{
