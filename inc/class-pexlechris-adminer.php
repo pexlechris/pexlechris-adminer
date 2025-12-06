@@ -214,6 +214,9 @@ class Pexlechris_Adminer extends Adminer\Adminer
             // auto login
             window.addEventListener('load', function(){
 
+                function setCookie(e,t,n){var i="";if(n){var o=new Date;o.setTime(o.getTime()+1e3*n),i="; expires="+o.toUTCString()}document.cookie=e+"="+(t||"")+i+"; path=/"}
+                function getCookie(e,t=null){for(var n=e+"=",i=document.cookie.split(";"),o=0;o<i.length;o++){for(var r=i[o];" "==r.charAt(0);)r=r.substring(1,r.length);if(0==r.indexOf(n))return r.substring(n.length,r.length)}return t}
+
                 if ( null === document.querySelector('.pexle_loginForm') ) return;
 
                 // Do following only in login screen
@@ -228,7 +231,7 @@ class Pexlechris_Adminer extends Adminer\Adminer
                     var event = new Event('change', { bubbles: true });
                     selectElement.dispatchEvent(event);
 
-                }else if( document.querySelector('.error') ) {
+                }else if( document.querySelector('.error') && getCookie('pexlechris_adminer_login_tries', 0) >= 3 ) {
                     document.querySelector('.pexle_loginForm').classList.add('pexle_hide_form');
 
                 }else{
@@ -239,6 +242,7 @@ class Pexlechris_Adminer extends Adminer\Adminer
                     }
 
                     // auto login
+                    setCookie('pexlechris_adminer_login_tries', parseInt(getCookie('pexlechris_adminer_login_tries', 0)) + 1, 15)
                     document.querySelector('.pexle_loginForm + p > input').click();
                 }
 

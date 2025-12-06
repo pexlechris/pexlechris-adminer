@@ -158,6 +158,7 @@ $dropdown_items = apply_filters('pexlechris_adminer_adminbar_dropdown_items', $d
 = 4.3.0 =
 * Tested up to: 6.9
 * [Enhancement]: Support added for plain permalinks.
+* [Enhancement]: In case of an Adminer login error, the system now automatically retries the login up to 3 times (After version 4.0.4, the number of retries had been reduced to 1).
 * [Enhancement]: Added polyfill for the deprecated each() function for environments where get_magic_quotes_gpc() exists and returns true.
 * [Enhancement]: The WP Adminer dropdown links have been added also in WP Adminer Tolls Page as buttons.
 * [Bug Fix]: Respect PEXLECHRIS_ADMINER_HAVE_ACCESS_ONLY_IN_WP_DB to not show move database button if is this const is set to true.
