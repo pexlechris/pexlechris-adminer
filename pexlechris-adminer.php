@@ -12,7 +12,7 @@
  * Requires at least: 4.7.0
  * Tested up to: 6.9
  * Requires PHP: 7.0
- * Tested up to PHP: 8.2
+ * Tested up to PHP: 8.3
  * License: GPLv2
  */
 

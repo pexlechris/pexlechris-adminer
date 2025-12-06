@@ -6,11 +6,11 @@ Author URI: https://www.pexlechris.dev
 Tags: Adminer, Database, sql, mysql, mariadb
 Version: 4.3.0
 Stable tag: 4.3.0
-Adminer version: 5.3.0
+Adminer version: 5.4.1
 Requires at least: 4.7.0
 Tested up to: 6.9
 Requires PHP: 7.0
-Tested up to PHP: 8.2
+Tested up to PHP: 8.3
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -157,6 +157,7 @@ $dropdown_items = apply_filters('pexlechris_adminer_adminbar_dropdown_items', $d
 == Changelog ==
 = 4.3.0 =
 * Tested up to: 6.9
+* Tested up to PHP: 8.3
 * [Enhancement]: Support added for plain permalinks.
 * [Enhancement]: The WP Adminer dropdown links have been added also in WP Adminer Tolls Page as buttons.
 * [Enhancement]: In case of an Adminer login error, the system now automatically retries the login up to 3 times (After version 4.0.4, the number of retries had been reduced to 1).
