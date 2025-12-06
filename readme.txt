@@ -55,7 +55,7 @@ You can access the WP Adminer from the below positions:
 
  * In the case of single site WordPress installations, only Administrators have access in WP Adminer, because by default only administrator have the `manage_options` capability.
  * In the case of WordPress Multisite installations, only Super Admins have access in WP Adminer, because by default only Super Admins have the `manage_network_options` capability.
-
+ * In all cases, the `manage_wp_adminer` capability now (versions **4.3.0** and above) grants access to WP Adminer. You can assign this capability to a role via code or through the User Role Editor plugin.
 
  = How to allow other capabilities or roles to have access to WP Adminer? =
  Just use the filter `pexlechris_adminer_access_capabilities` and return the array of desired capabilities that you want to have access to WP Adminer.
@@ -158,9 +158,10 @@ $dropdown_items = apply_filters('pexlechris_adminer_adminbar_dropdown_items', $d
 = 4.3.0 =
 * Tested up to: 6.9
 * [Enhancement]: Support added for plain permalinks.
-* [Enhancement]: In case of an Adminer login error, the system now automatically retries the login up to 3 times (After version 4.0.4, the number of retries had been reduced to 1).
-* [Enhancement]: Added polyfill for the deprecated each() function for environments where get_magic_quotes_gpc() exists and returns true.
 * [Enhancement]: The WP Adminer dropdown links have been added also in WP Adminer Tolls Page as buttons.
+* [Enhancement]: In case of an Adminer login error, the system now automatically retries the login up to 3 times (After version 4.0.4, the number of retries had been reduced to 1).
+* [Enhancement]: Add `manage_wp_adminer` in capabilities that give access to WP Adminer.
+* [Enhancement]: Added polyfill for the deprecated each() function for environments where get_magic_quotes_gpc() exists and returns true.
 * [Bug Fix]: Respect PEXLECHRIS_ADMINER_HAVE_ACCESS_ONLY_IN_WP_DB to not show move database button if is this const is set to true.
 
 = 4.2.0 =

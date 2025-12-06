@@ -55,10 +55,10 @@ if( !function_exists('pexlechris_adminer_access_capabilities') ) {
 	{
 		if (is_multisite()) {
 			//only Super Admins of website has the capability <code>manage_network_options</code>
-			$capabilities = array('manage_network_options');
+			$capabilities = ['manage_wp_adminer', 'manage_network_options'];
 		} else {
 			//only administrator of website has the capability <code>manage_options</code>
-			$capabilities = array('manage_options');
+			$capabilities = ['manage_wp_adminer', 'manage_options'];
 		}
 
 		$capabilities = apply_filters('pexlechris_adminer_access_capabilities', $capabilities);
