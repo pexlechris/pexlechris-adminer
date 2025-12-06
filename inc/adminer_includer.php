@@ -11,14 +11,14 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * It is strongly recommended, because Pexlechris_Adminer class contains WordPress/Adminer integration (auto login with WordPress credentials)
  *
- * If a developer wants to add just JS and/or CSS in head, he/she can just use the action pexlechris_adminer_head.
+ * If a developer wants to add just JS and/or CSS in head, he/she can just use the action pexlechris_adminer_head in a must-use plugin.
  * See plugin's FAQs, for more.
  *
  * @since 2.1.0
  *
  * @link https://www.adminer.org/en/plugins/#use Documentation URL.
- * @link https://www.adminer.org/en/plugins/ Adminer' plugins Documentation URL.
- * @link https://www.adminer.org/en/extension/ Adminer' extensions Documentation URL.
+ * @link https://www.adminer.org/en/plugins/ Adminer's plugins Documentation URL.
+ * @link https://www.adminer.org/en/extension/ Adminer's extensions Documentation URL.
  */
 if ( !function_exists('adminer_object') ) {
 
