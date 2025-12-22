@@ -309,7 +309,7 @@ class Pexlechris_Adminer extends Adminer\Adminer
             #dbs{
                 display: none;
             }
-            .footer > div > fieldset:nth-child(2):not(.jsonly) > legend{
+            .footer > div > fieldset:last-of-type:nth-child(2):not(.jsonly) > legend{
                 color: transparent;
                 width: 90px;
                 height: 17px;
