@@ -156,7 +156,7 @@ $dropdown_items = apply_filters('pexlechris_adminer_adminbar_dropdown_items', $d
 
 == Changelog ==
 = 4.3.5 =
-* [Enhancement]: Minor code fixes and keep compatibility with Adminer new version:
+* [Enhancement]: Minor code fixes ([Avoid deprecated `each` function commit](https://github.com/vrana/adminer/commit/9f4a51819e99be6388b10dd852ef32d24bc47d51)) and keep compatibility with Adminer new version:
 
 = 4.3.4.1 =
 * [Security]: Version 4.3.3 was missing a security check. Only this version is affected. Please update to 4.3.4.1 immediately.
