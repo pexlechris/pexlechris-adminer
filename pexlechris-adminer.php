@@ -2,8 +2,8 @@
 /**
  * Plugin Name: Database Manager - WP Adminer
  * Description: Manage the database from your WordPress Dashboard using Adminer.
- * Version: 4.3.4
- * Stable tag: 4.3.4
+ * Version: 4.3.5
+ * Stable tag: 4.3.5
  * Adminer version: 5.4.2
  * Author: Pexle Chris
  * Author URI: https://www.pexlechris.dev
@@ -57,8 +57,8 @@ function pexlechris_adminer_add_open_wp_adminer_link_in_plugin_action_links($lin
  * @since 3.0.0 MU Plugin version controlled by option pexlechris_adminer_mu_plugin_version
  */
 add_action( 'admin_init', 'pexlechris_adminer_copy_adminer_mu_plugin', 1 );
-function pexlechris_adminer_copy_adminer_mu_plugin() {
-
+function pexlechris_adminer_copy_adminer_mu_plugin()
+{
 	extract(PEXLECHRIS_ADMINER_MU_PLUGIN_DATA);
 
     $option = get_option( $option_name, null );
@@ -87,7 +87,6 @@ function pexlechris_adminer_copy_adminer_mu_plugin() {
     $WP_Filesystem_Direct->copy($from, $to);
 
 	update_option($option_name, $version);
-
 }
 
 /**
@@ -140,7 +139,7 @@ function determine_if_pexlechris_adminer_will_be_included()
 		 * @hooked pexlechris_adminer_disable_display_errors_before_adminer_loads, priority: 100
 		 */
 		do_action('pexlechris_adminer_before_adminer_loads');
-		include 'inc/adminer_includer.php';
+		include __DIR__ . '/inc/adminer_includer.php';
 		exit;
 	}else{
 		do_action('pexlechris_adminer_current_user_has_not_access');
