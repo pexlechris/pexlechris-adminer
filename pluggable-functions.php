@@ -13,8 +13,8 @@ if( !defined('PEXLECHRIS_ADMINER_SLUG') ){
 
 if( !function_exists('pexlechris_is_current_url_the_wp_adminer_url') ){
 	function pexlechris_is_current_url_the_wp_adminer_url(){
-		$REQUEST_URI = parse_url( $_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH);
-		$REQUEST_URI = rtrim($REQUEST_URI, '/');
+		$REQUEST_URI = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?: '';
+		$REQUEST_URI = untrailingslashit($REQUEST_URI);
 
 		/**
 		 * In order to support plain permalinks.
